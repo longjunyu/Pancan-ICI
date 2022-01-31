@@ -1,12 +1,12 @@
 This repository contains code for the paper "A mutation-based gene set predicts survival benefit after immunotherapy across multiple cancers and reveals the immune response landscape" by Junyu Long, Dongxu Wang, Anqiang Wang, Yu Lin, Jin Bian, Xu Yang, Mingjun Zheng, Haohai Zhang, Yongchang Zheng, Xinting Sang, Haitao Zhao (2022).
 
-The source of input data
+### The source of input data
 Mutation data and clinical information for the training and validation cohorts were obtained from the cBioPortal database (https://www.cbioportal.org) and the literatures [1-10]. In the training cohort from Samstein et al. [1], both mutation profiles and clinical data were available for 1,661 patients. Next, cancer types with only one case (n = 1) and cancer of unknown primary type (n = 88) were excluded; 1,572 cases remained. In the validation cohort, both mutation profiles and clinical data were available for 144 patients from Liu et al. [2], 274 patients from Mariathasan et al. [3], 249 patients from Miao et al. [4], 35 patients from Miao et al. [5], 68 patients from Riaz et al. [6], 38 patients from Hugo et al. [7], 110 patients from Van Allen et al. [8], and 64 patients from Snyder et al. [11]. Notably, in the Miao cohort (n=249) [4], cancer types with only one case (n=3) were excluded, with only 246 cases remaining. In the Hugo cohort (n=38) [7], one patient was excluded because of lack of overall survival data; 37 cases remained. In addition, 46 cases from the Snyder cohort (n=64) and Miao cohort (n=249) were duplicates, and 46 cases from the Snyder cohort were excluded [4,11].
 In the cohort from TCGA, mutation profiles (sequenced by WES), copy number variation (CNV), and mRNA expression profiles for 1,0143 patients with 33 cancer types, as acquired from the PanCancer Atlas consortium (https://gdc.cancer.gov/about-data/publications/pancanatlas), were employed to explore different genomic patterns between identified subtypes.
 All data was collected and the analysis was conducted from January 2020 to August 2021. 
 
 
-The content of the code
+### The content of the code
 All the code is performed under platform: R version 3.6.3. 
 The repository is organized as follows:
 1. Generation and validation of the mutation-based gene set.R
@@ -17,7 +17,8 @@ The repository is organized as follows:
 
 
 The detail description of the code
-1.	Generation and validation of the mutation-based gene set.R
+
+### 1. Generation and validation of the mutation-based gene set.R
 The dependency code is cal.R, check_balance.R, and GIPW_function_omega.R.
 
 1.1 Propensity score matching (PSM) weighting algorithm
@@ -39,7 +40,8 @@ Associations between the mutation-based gene set and OS were analyzed via the Ka
 1.7 Comparison of C-indexes among the mutation-based gene set, B2M mutation, JAK1 mutation, JAK2 mutation, KRAS mutation, TP53 mutation, PTEN mutation, STK11 mutation, and BAP1 mutation.
 
 
-2. Nomogram and calibration curve analyses.R
+### 2. Nomogram and calibration curve analyses.R
+
 2.1 Nomogram
 As convenient and reliable tools, nomograms are widely used to predict specific outcomes in clinical oncology; they quantitatively predict prognosis for certain patients using known critical predictive factors and illustrate the survival probability of clinical outcomes.
 
@@ -47,8 +49,9 @@ As convenient and reliable tools, nomograms are widely used to predict specific 
 A calibration curve was used to evaluate the agreement between the actual and predicted survival probabilities.
 
 
-3. The investigation of underlying extrinsic immune landscapes.R
+### 3. The investigation of underlying extrinsic immune landscapes.R
 The dependency code is fig_stack_barplot.R
+
 3.1 Sankey diagram
 Sankey diagram showed that the patients in the cohort from TCGA were classified into high-risk and low-risk groups.
 
@@ -82,7 +85,8 @@ The cytolytic activity score (CYT) was defined as the geometric mean of granzyme
 3.12 Comparison of expression patterns of chemokines between the high-risk and low-risk groups.
 
 
-4. The investigation of underlying intrinsic immune landscapes.R
+### 4. The investigation of underlying intrinsic immune landscapes.R
+
 4.1 Immunogenomic indicators analysis
 Immunogenomic indicators were obtained from the pancancer immune landscape project conducted by Thorsson et al. [13].
 
@@ -93,7 +97,8 @@ The “MutationalPatterns” R package (version: 1.12.0) was applied to perform 
 Ten canonical oncogenic pathways containing 187 oncogenes were obtained from the study conducted by Sanchez-Vega et al. Enrichment scores for each pathway in each sample were determined by the ssGSEA approach applying the “GSVA” R package.
 
 
-5. Copy number alterations analysis.R
+### 5. Copy number alterations analysis.R
+
 5.1 Copy number profiling
 Significant differences in chromosomal aberrations were detected between the high-risk and low-risk groups.
 
@@ -103,7 +108,7 @@ Venn diagrams showing significantly amplified genes in the high-risk and low-ris
 5.3 Cluster analysis
 Cluster analysis of the top 10 biological processes in the high-risk and low-risk groups.
 
-References
+### References
 1.	Samstein RM, Lee CH, Shoushtari AN, et al. Tumor mutational load predicts survival after immunotherapy across multiple cancer types. Nature genetics 2019; 51: 202-206.
 2.	Liu D, Schilling B, Liu D, et al. Integrative molecular and clinical modeling of clinical outcomes to PD1 blockade in patients with metastatic melanoma. Nature medicine 2019; 25: 1916-1927.
 3.	Mariathasan S, Turley SJ, Nickles D, et al. TGFβ attenuates tumour response to PD-L1 blockade by contributing to exclusion of T cells. Nature 2018; 554: 544-548.
@@ -120,4 +125,3 @@ References
 14.	Saltz J, Gupta R, Hou L, et al. Spatial Organization and Molecular Correlation of Tumor-Infiltrating Lymphocytes Using Deep Learning on Pathology Images. Cell Rep 2018; 23: 181-193.e187.
 15.	Danaher P, Warren S, Dennis L, et al. Gene expression markers of Tumor Infiltrating Leukocytes. J Immunother Cancer 2017; 5: 18.
 16.	He Y, Jiang Z, Chen C, et al. Classification of triple-negative breast cancers based on Immunogenomic profiling. Journal of experimental & clinical cancer research : CR 2018; 37: 327.
-
