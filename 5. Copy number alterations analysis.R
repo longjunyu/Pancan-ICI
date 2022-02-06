@@ -1,4 +1,4 @@
-# Copy number profiles
+# 5.1 Copy number profiles
 
 options(stringsAsFactors=FALSE)
 scores <- read.table(
@@ -301,7 +301,7 @@ dev.off()
 
 
 
-# Venn diagram
+# 5.2 Venn diagram
 
 options(stringsAsFactors=FALSE)
 infile <- "amp_genes.conf_99-IB.txt"
@@ -428,7 +428,7 @@ write.csv(outdf, outfile, row.names=FALSE, quote=FALSE)
 
 
 
-# Cluster analysis
+# 5.3 Cluster analysis
 
 library(ggplot2)
 library(plyr)
