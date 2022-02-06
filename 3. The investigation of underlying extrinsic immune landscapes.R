@@ -1,4 +1,4 @@
-# Sankey diagram
+# 3.1 Sankey diagram
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -300,7 +300,7 @@ dev.off()
 
 
 
-# TIL fraction, leukocyte fraction and lymphocyte fraction analyses
+# 3.2 TIL fraction, leukocyte fraction and lymphocyte fraction analyses
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -539,7 +539,7 @@ dev.off()
 
 
 
-# Danaher immune infiltration analysis
+# 3.3 Danaher immune infiltration analysis
 
 library(ggplot2)
 library(ggpubr)
@@ -843,7 +843,7 @@ dev.off()
 
 
 
-# 29 immune signatures evaluation
+# 3.4 Twenty-nine immune signature evaluations
 inputFile="EBPlusPlusAdjustPANCAN_exp.txt" 
 gmtFile="immune.gmt"              
 
@@ -877,7 +877,7 @@ write.table(ssgseaOut,file="ssgseaOut.txt",sep="\t",quote=F,col.names=F)
 
 
 
-# Comparison of the 29 immune signatures estimated by the ssGSEA method based on RNA-sequencing data between the high-risk and low-risk groups.
+# 3.5 Comparison of the 29 immune signatures estimated by the ssGSEA method based on RNA-sequencing data between the high-risk and low-risk groups.
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -1178,24 +1178,7 @@ dev.off()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#  Unsupervised clustering analysis
+# 3.6 Unsupervised clustering analysis
 library(pheatmap)
 rt=read.table("ssgseaOut2.txt",sep="\t",header=T,row.names=1,check.names=F)
 dim(rt)
@@ -1255,7 +1238,7 @@ write.table(clusterOut,file="cluster.Immunity.txt",sep="\t",quote=F,col.names=F,
 
 
 
-# The proportion of high immune infiltration and low immune infiltration estimated by 29 immune signatures in the high-risk and low-risk groups.
+# 3.7 The proportion of high immune infiltration and low immune infiltration estimated by 29 immune signatures in the high-risk and low-risk groups.
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -1313,16 +1296,7 @@ fig_stack_barplot(
 
 
 
-
-
-
-
-
-
-
-
-
-# Volcano plot
+# 3.8 Volcano plot
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -1614,12 +1588,7 @@ dev.off()
 
 
 
-
-
-
-
-
-# Correlation analysis
+# 3.9 Correlation analysis
 
 options(stringsAsFactors=FALSE)
 immudf <- read.table("Correlation.txt", head=TRUE, sep="\t", quote="")
@@ -1886,14 +1855,7 @@ dev.off()
 
 
 
-
-
-
-
-
-
-
-#  Cytolytic activity score assessment
+#  3.10 Cytolytic activity score assessment
 
 options(stringsAsFactors=FALSE)
 expdf <- read.table(
@@ -1932,7 +1894,7 @@ write.table(cytdf, "cyt.txt", sep="\t", row.names=FALSE, quote=FALSE)
 
 
 
-# Fibroblast  assessment
+# 3.11 Fibroblast assessment
 
 options(stringsAsFactors=FALSE)
 
@@ -1977,7 +1939,7 @@ write.table(outdf, "mcpestimate.txt", sep="\t", row.names=T, col.names=F, quote=
 
 
 
-# Comparison of expression patterns of chemokines between the high-risk and low-risk groups.
+# 3.12 Comparison of expression patterns of chemokines between the high-risk and low-risk groups.
 
 options(stringsAsFactors=FALSE)
 expdf <- read.table(
