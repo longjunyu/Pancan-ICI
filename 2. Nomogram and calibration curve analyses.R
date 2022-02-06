@@ -1,4 +1,4 @@
-# Nomogram
+# 2.1 Nomogram
 
 library(rms)
 library(Hmisc)
@@ -53,7 +53,7 @@ rcorrcens(Surv(futime, fustat) ~ predict(f), data = bc)
 
 
 
-# Calibration curve
+# 2.2 Calibration curve
 f1 <- cph(Surv(futime, fustat) ~ riskScore+M_Stage+IFNg_signature_6+CTL, x=T, y=T, surv=T, data=bc, time.inc=365)
 cal1 <- calibrate(f1, cmethod="KM", method="boot", u=365, m=14,B=1000)
 plot(cal1)
