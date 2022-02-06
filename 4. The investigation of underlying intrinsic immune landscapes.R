@@ -1,4 +1,4 @@
-# Immunogenomic indicators analysis
+# 4.1 Immunogenomic indicator analysis
 
 options(stringsAsFactors=FALSE)
 library(ggplot2)
@@ -271,7 +271,7 @@ dev.off()
 
 
 
-
+# 4.2 Deciphering mutational signatures in the genome
 options(stringsAsFactors=FALSE)
 
 mafdf <- read.table("mc3.v0.2.8.PUBLIC.maf", header=TRUE, sep="\t", quote="")
@@ -374,20 +374,20 @@ mafdf2[, "mutation_type6"] <- ifelse(
 )
 table(mafdf2[, "mutation_type6"])
 save.image("project_1.RData")
+
+
+
+
+
+
+
+
+
+
+
+
+
 load("project_1.RData")
-
-
-
-
-
-
-
-
-
-
-
-
-load("maf.RData")
 
 library(ggplot2)
 library(grid)
@@ -1675,7 +1675,7 @@ dev.off()
 
 
 
-# Oncogenic pathways analysis
+# 4.3 Oncogenic pathway analysis
 
 inputFile="EBPlusPlusAdjustPANCAN_exp_log.txt"
 gmtFile="pathway.gmt"
